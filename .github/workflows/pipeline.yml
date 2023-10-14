@@ -9,5 +9,5 @@ jobs:
   hello_word:
     runs-on: ubuntu-18.04
     steps:
-      - name: "Mi primer test"
+      - name: Mi primer test
         run: echo "Hola mundo."
