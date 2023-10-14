@@ -1,0 +1,62 @@
+---import { DarkModeSwitch } from "./dark-mode-switch";
+
+
+---
+
+<header id="navbar" class="flex justify-between py-3 px-">
+  <div>Habib Rejon</div>
+  <div class="flex flex-grow gap-3">
+    <a class="cursor-pointerCC">Presentation</a>
+    <a>What I Do</a>
+    <a>My Resume</a>
+    <a>Contact With Me</a>
+  </div>
+
+  <div>
+    <DarkModeSwitch client:load/>
+
+  </div>
+
+</header>
+
+<script>
+    document.addEventListener("scroll", () => {
+      const navbar = document.getElementById("navbar");
+      navbar?.classList.toggle("sticky-nav", window.scrollY > 30);
+    });
+  </script>
+
+<style>
+  nav {
+    position: relative;
+    left: 0;
+    top: 0;
+    height: 100px;
+    width: 100%;
+    display: flex;
+  }
+
+  .sticky-nav {
+    position: sticky;
+    box-shadow: 10px 10px 19px rgba(0, 0, 0, 0.1);
+    animation: headerAppear 0.6s ease forwards;
+    backdrop-filter: blur(5px);
+
+  }
+
+
+  @keyframes headerAppear {
+   0% {
+    opacity: 0;
+    margin-top: -100px;
+   }
+   50% {
+    opacity: 0;
+    margin-top: -50px;
+   }
+   100% {
+    opacity: 1;
+    margin-top: 0px;
+   }
+  }
+</style>

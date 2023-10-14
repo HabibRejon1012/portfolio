@@ -1,0 +1,53 @@
+---
+import {TypedWords} from "@/components/typed-words"
+import {Dropdown} from "@/components/menu"
+---
+
+<article id="" class="flex mt-3 w-full h-screen d-flex ">
+
+    <div>
+        <div class="flex flex-col justify-between">
+            <div class="flex flex-col gap-[16px]">
+                <span class="text-sm">
+                    WELCOME TO MY WORLD
+                </span>
+                <h1 class="text-[35px] text-white font-semibold">
+                    Hi, I’m <span class="text-d-red">Habib Rejon</span>
+                    
+                    a <TypedWords client:load  words={["Fullstack Developer", "Frontend developer", "Backend developer"]} />
+                </h1>
+                <p>
+                    I use animation as a third dimension by which to simplify experiences and kuiding thro each and every interaction. I’m not adding motion just to spruce things up, but doing it in ways that.
+                </p>
+                <p>
+                    I use animation as a third dimension by which to simplify experiences and kuiding thro each and every interaction. I’m not adding motion just to spruce things up, but doing it in ways that.
+                </p>
+                <p>
+                    I use animation as a third dimension by which to simplify experiences and kuiding thro each and every interaction. I’m not adding motion just to spruce things up, but doing it in ways that.
+                </p>
+            </div>
+            <div>
+                <div>
+                    <span>FIND WITH ME</span>
+                </div>
+                <div>@/components/typed-words
+                    <span>BEST SKILL ON</span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <Dropdown client:load />
+
+        </div>
+    </div>
+   
+
+    
+
+
+   
+</article>
+
+<style>
+  
+</style>

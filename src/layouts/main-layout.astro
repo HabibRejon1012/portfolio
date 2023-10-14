@@ -1,0 +1,36 @@
+---
+import NavBar from "@/components/nav-bar.astro";
+// Supports weights 100-900
+import "@fontsource-variable/montserrat";
+import "@fontsource/poppins";
+---
+
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>Habib Portfolio</title>
+  </head>
+  <body class="dark:text-d-gray dark:bg-bg-dark ">
+    <NavBar />
+    <main class="box-border px-[16px] md:px-[30px] lg:px-[100px]">
+      <slot />
+    </main>
+    <footer></footer>
+  </body>
+</html>
+
+<style is:global>
+  body {
+    font-family: "Montserrat Variable", sans-serif;
+  }
+
+  .neu-btn {
+background: linear-gradient(315deg, #23272b, #1e2024);
+box-shadow:  -5px -5px 11px #15171a,
+             5px 5px 11px #2d3136;
+  }
+</style>
