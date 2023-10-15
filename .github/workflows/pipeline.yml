@@ -15,6 +15,15 @@ permissions:
   id-token: write
 
 jobs:
+
+  cancel_proccess:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Verify and cancel others process." 
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{github.token}}
+
   build:
     runs-on: ubuntu-latest
     steps:
