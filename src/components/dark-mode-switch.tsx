@@ -1,5 +1,3 @@
-import pkg from "@material-tailwind/react"
-const  { Switch } = pkg
 import { useEffect, useState } from "react"
 
 
@@ -38,5 +36,5 @@ export const DarkModeSwitch = () => {
 
     
 
-    return <Switch crossOrigin={true} onChange={toggleTheme} checked={isDarkMode} color="red" />
+    return <div></div>
 }
