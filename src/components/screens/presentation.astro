@@ -1,0 +1,207 @@
+---
+import {TypedWords} from "@/components/typed-words"
+import DefaultSectionLayout from "@/layouts/default-section-layout.astro";
+import { ROUTES } from "src/utils/const";
+import { DEFAULT_CONTAINER } from "src/utils/defaul-styles";
+import { css } from "styled-system/css";
+
+
+
+
+const PRESENTATION_CONTAINER = css.raw({
+    display: "flex",
+    paddingTop: "32px",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+})
+
+const INFO_COTAINER = css({
+    width: "100%",
+    maxWidth: "849px",
+    display: "flex",
+    flexDirection: "column",
+    flex: "1",
+    md: {
+    }
+})
+
+const INFO_CONTAINER_WELCOME = css({
+    fontFamily: "primary",
+    letterSpacing: "3px",
+    mb: "5px"
+})
+
+const INFO_CONTAINER_TITLE = css({
+    fontWeight: 700,
+    fontSize: "45px",
+    lineHeight: "55px",
+    fontFamily: "secondary",
+    marginBottom: "5px",
+    md: {
+        fontSize: "60px",
+        lineHeight: "62px",
+    marginBottom: "22px",
+
+    },
+    _dark: {
+        color: "white"
+    },
+    "& span": {
+        color: "#ff014f"
+    }
+})
+
+const IMAGE_CONTAINER = css({
+    maxWidth: "500px",
+    width: "500px",
+    minW: "300px",
+    flex: "2",
+    display: "none",
+    md: {
+        display: "block"
+    }
+})
+
+const IMAGE =css({
+    width: "100%",
+    height: "auto"
+})
+
+const INFO_CONTAINER_FOOTER = css({
+            display: "flex",
+            mt: "36px",
+            justifyContent: "space-between",
+            flexDirection: "column",
+            rowGap: "16px",
+            md: {
+                flexDir: "row"
+            }
+})
+const INFO_ME_CONTAINER = css({
+    display: "flex",
+    columnGap: "16px",
+    flexDirection: "column"
+})
+
+const INFO_ME_TITLE = css({
+    fontWeight: "300",
+    marginBottom: "20px",
+    letterSpacing: "2px",
+    fontSize: "14px",
+    textTransform: "uppercase"
+})
+
+const INFO_ME_OPTION = css({
+    textDecoration: "none",
+    border: "none",
+    height: "70px",
+    width: "70px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems:"center",
+    padding: "10px 5px",
+    boxSizing: "border-box",
+    cursor: "pointer",
+    borderRadius: "10px",
+    boxShadow: `shadow_button_neo`,
+    background: "bg_button_neo",
+    transitionDuration: "0.5s",
+    transitionProperty: "transform",
+    _hover: {
+        transform: "translateY(-3px)"
+    }
+})
+
+
+const INFO_ME_SECTION = css({
+    display: "flex",
+    columnGap: "32px",
+    flexWrap: "wrap",
+    rowGap: "24px",
+    width: "100%",
+    maxWidth: "500px",
+    md: {
+    }
+})
+---
+
+    <DefaultSectionLayout id={ROUTES.WELCOME.id} className={PRESENTATION_CONTAINER}>
+    <article class={INFO_COTAINER}>
+        <header>
+            <p class={INFO_CONTAINER_WELCOME}>Bienvenido a mi mundo</p>
+            <h1 class={INFO_CONTAINER_TITLE}>
+                Hola soy <span class="">Habib Rejón</span> especializado en tecnologías
+                <TypedWords client:load  words={["Tv", "Web", "Movil"]} />
+            </h1>
+            <h2>
+                Con mas de 4 años de experiencia y amor por la tecnologia me siento contento de mostrarte mi experiencia y trabajar junto a ti!
+            </h2>
+            <div class={css({
+                display: "flex",
+                width: "100%",
+                justifyContent: "center",
+                margin: "16px 0px"
+            })}>
+            <img class={css({
+                 width:"300px",
+                    height: "auto",
+                md: {
+                    display: "none",
+                   
+
+                }
+            })} src="https://rainbowit.net/themes/inbio/wp-content/uploads/2021/08/banner-01.png" alt="">
+            </div>
+        </header>
+
+        <footer class={INFO_CONTAINER_FOOTER}>
+            <div class={INFO_ME_CONTAINER}>
+                <h3 class={INFO_ME_TITLE}>Mis Redes:</h3>
+                <div class={INFO_ME_SECTION}>
+                    <a class={INFO_ME_OPTION}>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+                    </a>
+                    <a class={INFO_ME_OPTION}>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg>
+                    </a>
+                    <a class={INFO_ME_OPTION}>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M16.5 7.5l0 .01" /></svg>
+                    </a>
+                </div>
+            </div>
+            <div class={INFO_ME_CONTAINER}>
+                <h3 class={INFO_ME_TITLE}>Principales Skills:</h3>
+                <div class={INFO_ME_SECTION}>
+                    <a class={INFO_ME_OPTION}>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-javascript" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 4l-2 14.5l-6 2l-6 -2l-2 -14.5z" /><path d="M7.5 8h3v8l-2 -1" /><path d="M16.5 8h-2.5a.5 .5 0 0 0 -.5 .5v3a.5 .5 0 0 0 .5 .5h1.423a.5 .5 0 0 1 .495 .57l-.418 2.93l-2 .5" /></svg>
+                    </a>
+                    <a class={INFO_ME_OPTION}>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-nodejs" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 9v8.044a2 2 0 0 1 -2.996 1.734l-1.568 -.9a3 3 0 0 1 -1.436 -2.561v-6.635a3 3 0 0 1 1.436 -2.56l6 -3.667a3 3 0 0 1 3.128 0l6 3.667a3 3 0 0 1 1.436 2.561v6.634a3 3 0 0 1 -1.436 2.56l-6 3.667a3 3 0 0 1 -3.128 0" /><path d="M17 9h-3.5a1.5 1.5 0 0 0 0 3h2a1.5 1.5 0 0 1 0 3h-3.5" /></svg>
+                    </a>
+                    <a class={INFO_ME_OPTION}>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-react-native" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6.357 9c-2.637 .68 -4.357 1.845 -4.357 3.175c0 2.107 4.405 3.825 9.85 3.825c.74 0 1.26 -.039 1.95 -.097" /><path d="M9.837 15.9c-.413 -.596 -.806 -1.133 -1.18 -1.8c-2.751 -4.9 -3.488 -9.77 -1.63 -10.873c1.15 -.697 3.047 .253 4.974 2.254" /><path d="M6.429 15.387c-.702 2.688 -.56 4.716 .56 5.395c1.783 1.08 5.387 -1.958 8.043 -6.804c.36 -.67 .683 -1.329 .968 -1.978" /><path d="M12 18.52c1.928 2 3.817 2.95 4.978 2.253c1.85 -1.102 1.121 -5.972 -1.633 -10.873c-.384 -.677 -.777 -1.204 -1.18 -1.8" /><path d="M17.66 15c2.612 -.687 4.34 -1.85 4.34 -3.176c0 -2.11 -4.408 -3.824 -9.845 -3.824c-.747 0 -1.266 .029 -1.955 .087" /><path d="M8 12c.285 -.66 .607 -1.308 .968 -1.978c2.647 -4.844 6.253 -7.89 8.046 -6.801c1.11 .679 1.262 2.706 .56 5.393" /><path d="M12.26 12.015h-.01c-.01 .13 -.12 .24 -.26 .24a.263 .263 0 0 1 -.25 -.26c0 -.14 .11 -.25 .24 -.25h-.01c.13 -.01 .25 .11 .25 .24" /></svg>
+                    </a>
+                    <a class={INFO_ME_OPTION}>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-kotlin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 20h-16v-16h16" /><path d="M4 20l16 -16" /><path d="M4 12l8 -8" /><path d="M12 12l8 8" /></svg>
+                    </a>
+                    <a class={INFO_ME_OPTION}>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-swift" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20.547 15.828c1.33 -4.126 -1.384 -9.521 -6.047 -12.828c-.135 -.096 2.39 6.704 1.308 9.124c-2.153 -1.454 -4.756 -3.494 -7.808 -6.124l-.5 2l-3.5 -1c4.36 4.748 7.213 7.695 8.56 8.841c-4.658 2.089 -10.65 -.978 -10.56 -.841c1.016 1.545 6 6 11 6c2 0 3.788 -.502 4.742 -1.389c.005 -.005 .432 -.446 1.378 -.17c.504 .148 1.463 .667 2.88 1.559v-1.507c0 -1.377 -.515 -2.67 -1.453 -3.665z" /></svg>
+                    </a>
+                    <a class={INFO_ME_OPTION}>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-html" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M13 16v-8l2 5l2 -5v8" /><path d="M1 16v-8" /><path d="M5 8v8" /><path d="M1 12h4" /><path d="M7 8h4" /><path d="M9 8v8" /><path d="M20 8v8h3" /></svg>
+                    </a>
+                    <a class={INFO_ME_OPTION}>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-css3" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 4l-2 14.5l-6 2l-6 -2l-2 -14.5z" /><path d="M8.5 8h7l-4.5 4h4l-.5 3.5l-2.5 .75l-2.5 -.75l-.1 -.5" /></svg>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </article>
+    <article class={IMAGE_CONTAINER}>
+        <img class={IMAGE} src="https://rainbowit.net/themes/inbio/wp-content/uploads/2021/08/banner-01.png" alt="">
+    </article>
+    </DefaultSectionLayout> 
+
+<style>
+  
+</style>

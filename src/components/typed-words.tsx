@@ -14,7 +14,7 @@ export const TypedWords = ({words}: Props) => {
   useEffect(() => {
     const typed = new Typed(el.current, {
       strings: words,
-      typeSpeed: 50,
+      typeSpeed: 250,
       loop: true,
     });
 
@@ -25,9 +25,9 @@ export const TypedWords = ({words}: Props) => {
   }, []);
 
   return (
-    <div className="App">
+    <>
       <span ref={el} />
-    </div>
+    </>
   );
 
 }

@@ -1,0 +1,15 @@
+---
+import { DEFAULT_CONTAINER } from "src/utils/defaul-styles";
+import { css } from "styled-system/css";
+const {id, className} = Astro.props 
+
+const BASE_CONTAINER = css.raw({
+    width: "100%",
+    display: "flex",
+}, DEFAULT_CONTAINER)
+---
+
+
+<section id={id} class={css(BASE_CONTAINER, className) + " section"}>
+    <slot />
+</section>

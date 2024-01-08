@@ -1,12 +1,23 @@
 ---
 
 	import MainLayout from "@/layouts/main-layout.astro"
-	import Presentation from "@/components/presentation.astro"
+	import Presentation from "@/components/screens/presentation.astro"
+import DefaultSectionLayout from "@/layouts/default-section-layout.astro";
+import { ROUTES } from "src/utils/const";
 
 ---
 
 <MainLayout>
 	<Presentation />
+	<DefaultSectionLayout id={ROUTES.EXPERENCE.id}>
+	My Experence
+	</DefaultSectionLayout>
+	<DefaultSectionLayout id={ROUTES.ABOUT.id}>
+		About me
+	</DefaultSectionLayout>
+	<DefaultSectionLayout id={ROUTES.CONTACT.id}>
+		Contact me
+	</DefaultSectionLayout>
 </MainLayout> 
 
 

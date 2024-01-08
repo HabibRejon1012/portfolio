@@ -11,5 +11,5 @@
       "@/images/*": ["./src/assets/images/"]
     }
   },
- 
+  "include":  ["src", "styled-system"]
 }

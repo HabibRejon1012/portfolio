@@ -12,17 +12,22 @@
   },
   "dependencies": {
     "@astrojs/react": "^3.0.3",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
     "@fontsource-variable/montserrat": "^5.0.14",
     "@fontsource/poppins": "^5.0.8",
+    "@mui/material": "^5.15.3",
+    "@shadow-panda/style-context": "^0.7.1",
     "astro": "^3.2.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "typed.js": "^2.0.16"
   },
   "devDependencies": {
-    "@types/react": "^18.0.21",
-    "@types/react-dom": "^18.0.6",
     "@pandacss/astro": "^0.24.2",
-    "@pandacss/dev": "^0.24.2"
+    "@pandacss/dev": "^0.24.2",
+    "@shadow-panda/preset": "^0.7.1",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6"
   }
 }

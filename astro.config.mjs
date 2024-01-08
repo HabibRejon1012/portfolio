@@ -7,5 +7,5 @@ import react from "@astrojs/react";
 export default defineConfig({
   integrations: [pandacss(), react()],
   site: 'https://portfolio.github.io',
-  base: '/portfolio',
+  base: '/',
 });

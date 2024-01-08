@@ -1,26 +1,62 @@
 ---
+import Footer from "@/components/footer.astro";
 import NavBar from "@/components/nav-bar.astro";
 // Supports weights 100-900
 import "@fontsource-variable/montserrat";
 import "@fontsource/poppins";
+import { css } from "styled-system/css";
+
+const BODY_CONTAINER = css({
+  bg: "bg_color",
+  color: "text_color",
+  display: "flex",
+  alignItems: "center",
+  flexDir: "column"
+})
+
+
 ---
 
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
 
     <title>Habib Portfolio</title>
   </head>
-  <body class="dark:text-d-gray dark:bg-bg-dark ">
+  <body data-color-mode="light" class={BODY_CONTAINER}>
     <NavBar />
-    <main class="box-border px-[16px] md:px-[30px] lg:px-[100px]">
+    <main class={css({
+      maxWidth: "1500px",
+      width: "100%"
+    })}>
       <slot />
     </main>
-    <footer></footer>
+    <Footer />
   </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+     
+
+      // Manejar el cambio de fragmento de URL al cargar la página
+      window.addEventListener('hashchange', function() {
+        const targetId = window.location.hash.split("#")[1]
+        const targetElement = document.getElementById(targetId);
+
+        if(!targetElement)
+          return
+
+        targetElement.classList.toggle("hide")
+
+        // Mostrar la sección correspondiente
+        setTimeout(() => {
+          targetElement.classList.remove('hide');
+        }, 100);
+      });
+    });
+  </script>
 </html>
 
 <style is:global>
@@ -28,9 +64,17 @@ import "@fontsource/poppins";
     font-family: "Montserrat Variable", sans-serif;
   }
 
-  .neu-btn {
-background: linear-gradient(315deg, #23272b, #1e2024);
-box-shadow:  -5px -5px 11px #15171a,
-             5px 5px 11px #2d3136;
-  }
+    /* Estilos comunes */
+    .section {
+      opacity: 1;
+      transition: opacity 1s ease-in-out;
+    }
+
+    /* Transición al cambiar la opacidad */
+    .hide {
+      opacity: 0;
+    }
+
 </style>
+
+

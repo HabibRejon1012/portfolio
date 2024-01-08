@@ -1,62 +1,78 @@
----import { DarkModeSwitch } from "./dark-mode-switch";
+---
+import { DEFAULT_CONTAINER } from "src/utils/defaul-styles";
+import { css } from "styled-system/css";
+import { PoButtonMenu } from "./po-button-menu";
+import { DarkModeButton } from "./dark-mode-button";
+import { ROUTES } from "src/utils/const";
 
 
+const HEADER_CONTAINER = css({
+  width: "100%",
+  boxSizing: "border-box",
+  display: "flex",
+  justifyContent: "space-between",
+  _light: {
+    borderBottom: "1px solid #dce1e4",
+  },
+  alignItems: "center",
+  
+  paddingTop: "32px",
+  paddingBottom: "32px"
+},DEFAULT_CONTAINER)
+
+const OPTIONS_CONTAINER_MOBILE = css({
+  display: "flex",
+  cursor: "pointer",
+  md: {
+    display: "none",
+  },
+  columnGap: "16px"
+})
+
+const OPTIONS_CONTAINER = css({
+  display: "none",
+  columnGap: "20px",
+  md: {
+    display: "flex",
+  },
+  alignItems: "center"
+})
+
+const OPTION = css({
+  borderBottom: "1px solid transparent",
+  _hover: {
+    borderBottom: "1px solid red"
+  },
+})
 ---
 
-<header id="navbar" class="flex justify-between py-3 px-">
+<header  class={HEADER_CONTAINER}>
   <div>Habib Rejon</div>
-  <div class="flex flex-grow gap-3">
-    <a class="cursor-pointerCC">Presentation</a>
-    <a>What I Do</a>
-    <a>My Resume</a>
-    <a>Contact With Me</a>
-  </div>
 
-  <div>
-    <DarkModeSwitch client:load/>
 
-  </div>
+  <nav class={OPTIONS_CONTAINER}>
+    <DarkModeButton client:only/>
+    <a class={OPTION}href={ROUTES.WELCOME.route}>Bienvenida</a>
+    <a class={OPTION}href={ROUTES.ABOUT.route}>Sobre mi</a>
+    <a class={OPTION}href={ROUTES.EXPERENCE.route}>Mi experiencia</a>
+    <a class={OPTION}href={ROUTES.CONTACT.route}>Contactame</a>
+  </nav>
+
+  <nav class={OPTIONS_CONTAINER_MOBILE}>
+    <DarkModeButton client:only/>
+    <PoButtonMenu client:only >
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
+    </PoButtonMenu>
+  </nav>
+
+  
 
 </header>
 
 <script>
-    document.addEventListener("scroll", () => {
-      const navbar = document.getElementById("navbar");
-      navbar?.classList.toggle("sticky-nav", window.scrollY > 30);
-    });
-  </script>
+
+</script>
 
 <style>
-  nav {
-    position: relative;
-    left: 0;
-    top: 0;
-    height: 100px;
-    width: 100%;
-    display: flex;
-  }
 
-  .sticky-nav {
-    position: sticky;
-    box-shadow: 10px 10px 19px rgba(0, 0, 0, 0.1);
-    animation: headerAppear 0.6s ease forwards;
-    backdrop-filter: blur(5px);
-
-  }
-
-
-  @keyframes headerAppear {
-   0% {
-    opacity: 0;
-    margin-top: -100px;
-   }
-   50% {
-    opacity: 0;
-    margin-top: -50px;
-   }
-   100% {
-    opacity: 1;
-    margin-top: 0px;
-   }
-  }
 </style>
