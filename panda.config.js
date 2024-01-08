@@ -7,10 +7,9 @@ export default defineConfig({
     // define the content to scan 👇🏻
     include: ['./src/**/*.{ts,tsx,js,jsx,astro}', './pages/**/*.{ts,tsx,js,jsx,astro}'],
     exclude: [],
-    presets: ['@shadow-panda/preset'],
     jsxFramework: 'react',
     emitPackage: true,
-    outdir: '@shadow-panda/styled-system',
+    outdir: 'styled-system',
     conditions: {
         light: '[data-color-mode=light] &',
         dark: '[data-color-mode=dark] &',
