@@ -17,7 +17,6 @@
     "@fontsource-variable/montserrat": "^5.0.14",
     "@fontsource/poppins": "^5.0.8",
     "@mui/material": "^5.15.3",
-    "@shadow-panda/style-context": "^0.7.1",
     "astro": "^3.2.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -26,7 +25,6 @@
   "devDependencies": {
     "@pandacss/astro": "^0.24.2",
     "@pandacss/dev": "^0.24.2",
-    "@shadow-panda/preset": "^0.7.1",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6"
   }

@@ -3,9 +3,9 @@ import React from 'react'
 type Props = {
     child: React.ReactNode,
     side: "left" | "right" | "top" | "bottom",
-    list: 
+    
 }
-export const AsideMenu: React.FC<Props>  = ({child, side, children}) => {
+export const AsideMenu: React.FC<Props>  = ({child, side}) => {
 
 
   const onClose = () => {
@@ -16,7 +16,6 @@ export const AsideMenu: React.FC<Props>  = ({child, side, children}) => {
    <Drawer
       anchor={side}
       open={true}
-      onClose={onClose()}
     >
      
     </Drawer>

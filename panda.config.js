@@ -7,7 +7,6 @@ export default defineConfig({
     // define the content to scan 👇🏻
     include: ['./src/**/*.{ts,tsx,js,jsx,astro}', './pages/**/*.{ts,tsx,js,jsx,astro}'],
     exclude: [],
-    jsxFramework: 'react',
     outdir: 'styled-system',
     emitPackage: true,
     conditions: {
