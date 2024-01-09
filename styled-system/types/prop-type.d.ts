@@ -209,7 +209,7 @@ interface PropertyValueTypes {
 	strokeWidth: Tokens["borderWidths"];
 	srOnly: boolean;
 	debug: boolean;
-	colorPalette: "current" | "black" | "white" | "transparent" | "rose" | "pink" | "fuchsia" | "purple" | "violet" | "indigo" | "blue" | "sky" | "cyan" | "teal" | "emerald" | "green" | "lime" | "yellow" | "amber" | "orange" | "red" | "neutral" | "stone" | "zinc" | "gray" | "slate" | "bg_light" | "bg_dark" | "color_light" | "color_dark" | "color_red" | "text_color" | "bg_color";
+	colorPalette: "current" | "black" | "white" | "transparent" | "rose" | "pink" | "fuchsia" | "purple" | "violet" | "indigo" | "blue" | "sky" | "cyan" | "teal" | "emerald" | "green" | "lime" | "yellow" | "amber" | "orange" | "red" | "neutral" | "stone" | "zinc" | "gray" | "slate" | "bg_light" | "bg_dark" | "color_light" | "color_dark" | "color_red" | "bg_btn_light" | "bg_btn_dark" | "shadow_btn_dark" | "shadow_btn_light" | "text_color" | "bg_color" | "bg_button_neo" | "shadow_button_neo";
 	textStyle: "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl";
 }
 

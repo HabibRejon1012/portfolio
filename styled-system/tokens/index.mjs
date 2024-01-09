@@ -1659,6 +1659,22 @@ const tokens = {
     "value": "#ff014f",
     "variable": "var(--colors-color_red)"
   },
+  "colors.bg_btn_light": {
+    "value": "linear-gradient(145deg, #e2e8ec, #ffffff)",
+    "variable": "var(--colors-bg_btn_light)"
+  },
+  "colors.bg_btn_dark": {
+    "value": "linear-gradient(145deg, #1e2024, #23272b)",
+    "variable": "var(--colors-bg_btn_dark)"
+  },
+  "colors.shadow_btn_dark": {
+    "value": "10px 10px 19px #1c1e22,\n                        -10px -10px 19px #262a2e",
+    "variable": "var(--colors-shadow_btn_dark)"
+  },
+  "colors.shadow_btn_light": {
+    "value": "5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff",
+    "variable": "var(--colors-shadow_btn_light)"
+  },
   "fonts.sans": {
     "value": "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
     "variable": "var(--fonts-sans)"
@@ -1706,6 +1722,14 @@ const tokens = {
   "colors.bg_color": {
     "value": "var(--colors-bg_color)",
     "variable": "var(--colors-bg_color)"
+  },
+  "colors.bg_button_neo": {
+    "value": "var(--colors-bg_button_neo)",
+    "variable": "var(--colors-bg_button_neo)"
+  },
+  "colors.shadow_button_neo": {
+    "value": "var(--colors-shadow_button_neo)",
+    "variable": "var(--colors-shadow_button_neo)"
   },
   "spacing.-1": {
     "value": "calc(var(--spacing-1) * -1)",

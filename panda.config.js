@@ -9,6 +9,7 @@ export default defineConfig({
     exclude: [],
     jsxFramework: 'react',
     outdir: 'styled-system',
+    emitPackage: true,
     conditions: {
         light: '[data-color-mode=light] &',
         dark: '[data-color-mode=dark] &',
