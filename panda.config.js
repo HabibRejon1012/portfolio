@@ -8,7 +8,6 @@ export default defineConfig({
     include: ['./src/**/*.{ts,tsx,js,jsx,astro}', './pages/**/*.{ts,tsx,js,jsx,astro}'],
     exclude: [],
     jsxFramework: 'react',
-    emitPackage: true,
     outdir: 'styled-system',
     conditions: {
         light: '[data-color-mode=light] &',
