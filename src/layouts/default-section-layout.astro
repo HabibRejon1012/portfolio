@@ -1,7 +1,7 @@
 ---
 import { DEFAULT_CONTAINER } from "src/utils/defaul-styles";
 import { css } from "styled-system/css";
-const {id, className} = Astro.props 
+const {id, className, animation} = Astro.props 
 
 const BASE_CONTAINER = css.raw({
     width: "100%",
@@ -10,6 +10,6 @@ const BASE_CONTAINER = css.raw({
 ---
 
 
-<section id={id} class={css(BASE_CONTAINER, className) + " section"}>
+<section id={id} class={css(BASE_CONTAINER, className) + " animation-container"} >
     <slot />
 </section>

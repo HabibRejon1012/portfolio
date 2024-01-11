@@ -37,44 +37,72 @@ const BODY_CONTAINER = css({
     <Footer />
   </body>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-     
 
-      // Manejar el cambio de fragmento de URL al cargar la página
-      window.addEventListener('hashchange', function() {
-        const targetId = window.location.hash.split("#")[1]
-        const targetElement = document.getElementById(targetId);
+    function observerAnimation(entries: IntersectionObserverEntry[], observer: IntersectionObserver) {
+      entries.forEach(entry => {
+          const elementId = entry.target.id
+          const info = animationElements.find(it => it.elementSelector.includes(elementId))
 
-        if(!targetElement)
-          return
+          if(!info){
+            throw new Error(elementId + " not found.")
+          }
 
-        targetElement.classList.toggle("hide")
 
-        // Mostrar la sección correspondiente
-        setTimeout(() => {
-          targetElement.classList.remove('hide');
-        }, 100);
-      });
-    });
+          const elementSource = document.querySelector(info?.recipientElementSelector ?? info?.elementSelector!!)
+          if(!elementSource){
+            throw new Error(elementSource + " not found.")
+          }
+          elementSource.classList.toggle("unset", entry.isIntersecting)
+      })
+    }
+
+    const animationElements: {
+      elementSelector: string,
+      recipientElementSelector?: string,
+    }[] = [{
+      elementSelector: "#welcome",
+      recipientElementSelector: "#image-container",
+    }]
+    
+
+    const observer = new IntersectionObserver(observerAnimation, {
+      root: undefined,
+      rootMargin: undefined,
+      threshold: 0
+    })
+
+    animationElements.forEach(it => {
+      const element = document.querySelector(it.elementSelector)
+      if(!element){
+        throw new Error(it.elementSelector + " not found.")
+      }
+      observer.observe(element)
+    })
+
   </script>
 </html>
 
 <style is:global>
+  @layer reset, base, tokens, recipes, utilities;
   body {
     font-family: "Montserrat Variable", sans-serif;
   }
 
-    /* Estilos comunes */
-    .section {
-      opacity: 1;
-      transition: opacity 1s ease-in-out;
-    }
 
-    /* Transición al cambiar la opacidad */
-    .hide {
-      opacity: 0;
-    }
 
+  [data-animation="show"]  {
+    opacity: 0;
+    transition: all 1s ease-in-out 0.2s;
+
+    --opacity: 1;
+    --scale: 1;
+  } 
+
+
+  .unset {
+    opacity: var(--opacity);
+    transform: scale(var(--scale));
+  }
 </style>
 
 

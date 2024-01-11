@@ -4,13 +4,20 @@
 	import Presentation from "@/components/screens/presentation.astro"
 import DefaultSectionLayout from "@/layouts/default-section-layout.astro";
 import { ROUTES } from "src/utils/const";
+import { HistoryList } from "@/components/history-list";
+import { css } from "styled-system/css";
 
 ---
 
 <MainLayout>
 	<Presentation />
-	<DefaultSectionLayout id={ROUTES.EXPERENCE.id}>
+	<DefaultSectionLayout id={ROUTES.EXPERENCE.id} className={css.raw({
+		flexDirection: "column"
+	})}>
 	My Experence
+	<HistoryList client:only >
+		<div></div>
+	</HistoryList>
 	</DefaultSectionLayout>
 	<DefaultSectionLayout id={ROUTES.ABOUT.id}>
 		About me

@@ -125,7 +125,7 @@ const INFO_ME_SECTION = css({
 })
 ---
 
-    <DefaultSectionLayout id={ROUTES.WELCOME.id} className={PRESENTATION_CONTAINER}>
+    <DefaultSectionLayout id={ROUTES.WELCOME.id} className={PRESENTATION_CONTAINER} >
     <article class={INFO_COTAINER}>
         <header>
             <p class={INFO_CONTAINER_WELCOME}>Bienvenido a mi mundo</p>
@@ -197,11 +197,14 @@ const INFO_ME_SECTION = css({
             </div>
         </footer>
     </article>
-    <article class={IMAGE_CONTAINER}>
-        <img class={IMAGE} src="https://rainbowit.net/themes/inbio/wp-content/uploads/2021/08/banner-01.png" alt="">
+    <article id="image-container" class={IMAGE_CONTAINER} data-animation="show">
+        <img  class={IMAGE} src="https://rainbowit.net/themes/inbio/wp-content/uploads/2021/08/banner-01.png" alt="">
     </article>
     </DefaultSectionLayout> 
 
-<style>
-  
-</style>
+
+
+<script>
+
+
+</script>
