@@ -17,6 +17,7 @@
     "@fontsource-variable/montserrat": "^5.0.14",
     "@fontsource/poppins": "^5.0.8",
     "@mui/material": "^5.15.3",
+    "@pandacss/astro": "^0.25.0",
     "astro": "^3.2.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
