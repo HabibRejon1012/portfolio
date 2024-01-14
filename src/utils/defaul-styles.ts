@@ -5,5 +5,8 @@ export const DEFAULT_CONTAINER = css.raw({
     maxWidth: "1500px",
     paddingLeft: "16px",
     paddingRight: "16px",
-
+    lg: {
+        paddingLeft: "32px",
+        paddingRight: "32px"
+    }
 })

@@ -1,24 +1,22 @@
 ---
 
-	import MainLayout from "@/layouts/main-layout.astro"
-	import Presentation from "@/components/screens/presentation.astro"
+import MainLayout from "@/layouts/main-layout.astro"
+import Presentation from "@/components/screens/presentation.astro"
 import DefaultSectionLayout from "@/layouts/default-section-layout.astro";
 import { ROUTES } from "src/utils/const";
 import { HistoryList } from "@/components/history-list";
 import { css } from "styled-system/css";
+import Experience from "@/components/screens/experience.astro";
+
+const EXPERIENCE_CONTAINER = css.raw({
+	marginTop: "32px"
+})
 
 ---
 
 <MainLayout>
 	<Presentation />
-	<DefaultSectionLayout id={ROUTES.EXPERENCE.id} className={css.raw({
-		flexDirection: "column"
-	})}>
-	My Experence
-	<HistoryList client:only >
-		<div></div>
-	</HistoryList>
-	</DefaultSectionLayout>
+	<Experience className={EXPERIENCE_CONTAINER}/>
 	<DefaultSectionLayout id={ROUTES.ABOUT.id}>
 		About me
 	</DefaultSectionLayout>

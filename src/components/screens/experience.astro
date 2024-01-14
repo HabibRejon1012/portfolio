@@ -1,0 +1,43 @@
+---
+import DefaultSectionLayout from "@/layouts/default-section-layout.astro";
+import { css } from "styled-system/css";
+import { ROUTES } from "src/utils/const";
+import { HistoryList } from "../history-list";
+import { TabsExperience } from "../tabs-experience";
+
+const { className} = Astro.props
+
+const SUBTITLE = css({
+	color: "red",
+    letterSpacing: "2px",
+    display: "block",
+    lineHeight: "14px",
+    fontWeight: 500,
+	textTransform: "uppercase",
+	fontSize: "14px",
+	fontFamily: "secondary"
+})
+
+const TITLE = css({
+	fontSize: "40px",
+	fontWeight: "700",
+	lineHeight: "1.2",
+	marginTop: "15px"
+})
+
+
+---
+
+<DefaultSectionLayout id={ROUTES.EXPERENCE.id} className={css.raw({
+		mt: "32px",
+		flexDirection: "column"
+	})}>
+	<h3 class={SUBTITLE}>4+ YEARS OF EXPERIENCE</h3>
+	<h2 class={TITLE}>My Experience</h2>
+
+	<TabsExperience client:load/>
+	
+
+
+
+	</DefaultSectionLayout>

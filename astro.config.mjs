@@ -5,6 +5,9 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [pandacss(), react()],
+  integrations: [pandacss({
+
+  }), react()],
   site: 'https://portfolio.github.io',
+  
 });

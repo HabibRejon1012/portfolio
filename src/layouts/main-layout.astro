@@ -5,6 +5,7 @@ import NavBar from "@/components/nav-bar.astro";
 import "@fontsource-variable/montserrat";
 import "@fontsource/poppins";
 import { css } from "styled-system/css";
+import "../index.css"
 
 const BODY_CONTAINER = css({
   bg: "bg_color",
@@ -83,7 +84,6 @@ const BODY_CONTAINER = css({
 </html>
 
 <style is:global>
-  @layer reset, base, tokens, recipes, utilities;
   body {
     font-family: "Montserrat Variable", sans-serif;
   }
